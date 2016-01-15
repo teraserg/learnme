@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %} RandomItem {% endblock %}
+
+{% block content %}
+    <h3> RandomItem index! </h3>
+
+{% if words %}
+    <ul>
+    {% for word in words %}
+        <li><a href="/item/{{ word.id }}/">{{ word.text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No words are available.</p>
+{% endif %}
+
+{% endblock %}
