@@ -1,5 +1,6 @@
 from django.db import models
 
 
-class Word(models.Model):
-    text = models.CharField(max_length=200)
+class Dictionary(models.Model):
+    item = models.CharField(max_length=256)
+    translation = models.CharField(max_length=1024)

@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Word
+from .models import Dictionary
 
 
 def index(request):
-    words = Word.objects.order_by("text")
-    context = {'words': words}
+    items = Dictionary.objects.order_by("item")
+    context = {'items': items}
     return render(request, 'random_item/index.html', context)

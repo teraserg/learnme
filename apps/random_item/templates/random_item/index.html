@@ -4,16 +4,18 @@
 {% block title %} RandomItem {% endblock %}
 
 {% block content %}
-    <h3> RandomItem index! </h3>
 
-{% if words %}
-    <ul>
-    {% for word in words %}
-        <li><a href="/item/{{ word.id }}/">{{ word.text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No words are available.</p>
-{% endif %}
+    {% if items %}
+        <table>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.item }}</td>
+                    <td>{{ item.translation }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No items available.</p>
+    {% endif %}
 
 {% endblock %}
