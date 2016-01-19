@@ -5,14 +5,17 @@
 
 {% block content %}
 
-    {% if items %}
-        <table>
-            {% for item in items %}
-                <tr>
-                    <td>{{ item.item }}</td>
-                    <td>{{ item.translation }}</td>
-                </tr>
-            {% endfor %}
+    {% if r_item %}
+        <table border="1">
+            <tr>
+                <td>en</td>
+                <td>ua</td>
+            </tr>
+            <tr>
+                <td>{{ r_item.item }}</td>
+                <td>{{ r_item.translation }}</td>
+            </tr>
+
         </table>
     {% else %}
         <p>No items available.</p>

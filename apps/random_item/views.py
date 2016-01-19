@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Dictionary
 
 
-def index(request):
-    items = Dictionary.objects.order_by("item")
-    context = {'items': items}
+def random_item(request):
+    r_item = Dictionary.objects.order_by("?").first()
+    context = {'r_item': r_item}
     return render(request, 'random_item/index.html', context)

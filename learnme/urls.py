@@ -18,6 +18,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^', include('apps.random_item.urls')),
     url(r'^item/', include('apps.random_item.urls')),
     url(r'^admin/', admin.site.urls),
 ]
