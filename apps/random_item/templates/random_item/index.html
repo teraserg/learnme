@@ -2,18 +2,41 @@
 {% load staticfiles %}
 
 {% block title %} RandomItem {% endblock %}
+{% block style %}
+<style type="text/css">
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+}
+
+.left_column { 
+    background-color: #ffffe5;
+}
+
+.right_column { 
+    background-color: #e5ffff;
+}
+</style>
+{% endblock %}
 {% block content %}
-
     {% if r_item %}
-        <table border="1">
+        <table>
             <tr>
-                <td>en</td>
-                <td>ua</td>
+                <td class='left_column'>en</td>
+                <td class='right_column'>ua</td>
             </tr>
             <tr>
-                <td>{{ r_item.item }}</td>
-                <td>{{ r_item.translation }}</td>
+                <td class='left_column'>{{ r_item.item }}</td>
+                <td class='right_column'>{{ r_item.translation }}</td>
             </tr>
 
         </table>
